@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+
 namespace SupplementCRUDAPI.Services
 {
     public class SupplementService
@@ -19,27 +21,27 @@ namespace SupplementCRUDAPI.Services
             _supplement = database.GetCollection<Supplement>("Supplements");
         }
 
-        public List<Supplement> Get()
+        public async Task<List<Supplement>> Get()
         {
-            return _supplement.Find(s => true).ToList();
+            return await _supplement.Find(s => true).ToListAsync();
         }
 
-        public Supplement Get(string id)
+        public async Task<Supplement> Get(string id)
         {
-            return _supplement.Find(s => s.Id == id).FirstOrDefault();
+            return await _supplement.Find(s => s.Id == id).FirstOrDefaultAsync();
         }
 
-        public Supplement Create(Supplement s)
+        public async Task<Supplement> Create(Supplement s)
         {
-            _supplement.InsertOne(s);
+            await _supplement.InsertOneAsync(s);
             return s;
         }
 
-        public void Update(string id, Supplement s)
+        public async Task<Supplement> Update(string id, Supplement s)
         {
-            _supplement.ReplaceOne(su => su.Id == id, s);
+             await _supplement.ReplaceOneAsync(su => su.Id == id, s);
+             return s;
         }
-
 
         public void Remove(Supplement s)
         {
