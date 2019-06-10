@@ -33,9 +33,9 @@ namespace SupplementCRUDAPI
             {
                 c.SwaggerDoc("v1", new Info
                 {
-                    Title = "Todo API",
+                    Title = "Supplement API",
                     Version = "v1",
-                    Description = "Todo API tutorial using MongoDB",
+                    Description = "Supplement API tutorial using MongoDB",
                 });
             });
 
@@ -57,7 +57,7 @@ namespace SupplementCRUDAPI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Supplement V1");
             });
             app.UseHttpsRedirection();
             app.UseMvc();

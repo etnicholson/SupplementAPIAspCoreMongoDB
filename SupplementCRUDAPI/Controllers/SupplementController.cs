@@ -65,7 +65,7 @@ namespace SupplementCRUDAPI.Controllers
             return CreatedAtRoute("Get", new { id = su.Id.ToString() }, su);
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/Supplement/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Supplement>> Delete(string id)
         {
@@ -74,7 +74,7 @@ namespace SupplementCRUDAPI.Controllers
             {
                 return NotFound();
             }
-            _supplementService.Remove(s.Id);
+
             return NoContent();
 
         }
