@@ -1,4 +1,5 @@
 # SupplementAPIAspCoreMongoDB
+https://dev.to/etnicholson/developing-a-crudapi-with-asp-net-core-mongodb-docker-swagger-cf4
 
 A CRUD API for a supplement store that uses Swagger and MongoDB. The API is build as a docker image.
 ## Build
